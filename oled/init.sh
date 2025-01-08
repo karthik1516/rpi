@@ -1,2 +1,2 @@
-python3 -m venv venv
-source venv/bin/activate
+pip install adafruit-circuitpython-ssd130
+pip install pillow
