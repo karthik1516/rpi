@@ -19,17 +19,15 @@ i2c = busio.I2C(SCL, SDA)
 display = adafruit_ssd1306.SSD1306_I2C(OLED_WIDTH, OLED_HEIGHT, i2c, addr=ADDR)
 
 
-#image = Image.new('1', (OLED_WIDTH, OLED_HEIGHT))
-#draw = ImageDraw.Draw(image)
-#font = ImageFont.load_default()
+image = Image.new('1', (OLED_WIDTH, OLED_HEIGHT))
+draw = ImageDraw.Draw(image)
+font = ImageFont.load_default()
 
 clear(display)
-with Image.open("./testimg2.png") as im:
-    i2=im.convert('1')
-    display.image(i2)
-    display.show()
+font.size=100
 
-
-
+draw.text((5,5), "OLED is cool", fill=255, font=font)
+display.image(image)
+display.show()
 
 
