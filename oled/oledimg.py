@@ -24,7 +24,7 @@ display = adafruit_ssd1306.SSD1306_I2C(OLED_WIDTH, OLED_HEIGHT, i2c, addr=ADDR)
 #font = ImageFont.load_default()
 
 clear(display)
-with Image.open("./testimg.jpg") as im:
+with Image.open("./testimg.png") as im:
     im.rotate(45).show()
     display.image(im)
     display.show()
